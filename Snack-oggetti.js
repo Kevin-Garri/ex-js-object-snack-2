@@ -53,3 +53,31 @@ const secondBurger = structuredClone(hamburger);
 const thirdBurger = structuredClone(hamburger);
 
 //Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice? 9
+
+//4.
+const chef = {
+  name: "Chef Hyur",
+  age: 29,
+  makeBurger: (num = 1) => {
+    console.log(`Ecco ${num} hamburger per te!`);
+  },
+}
+
+const chefClone = { ...chef }
+
+const restaurant = {
+  name: "Hyur's Burgers",
+  address: {
+    street: 'Main Street',
+    number: 123,
+  },
+  openingDate: new Date(2025, 3, 11),
+  isOpen: false,
+};
+
+const restaurantClone = structuredClone(restaurant);
+console.log(restaurantClone);
+
+
+//Qual è il metodo migliore per clonare l’oggetto chef, e perché? spread operator meglio per oggetti senza proprietà annidate o funzioni complesse
+//Qual è il metodo migliore per clonare l’oggetto restaurant, e perché? structuredClone per non perdere le proprietà annidate e i tipi di dato complessi come Date
